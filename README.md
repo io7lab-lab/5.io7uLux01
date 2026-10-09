@@ -21,7 +21,7 @@ def handleCommand(topic, msg):
     global lastPub
     jo = json.loads(str(msg,'utf8'))
     if ("lux" in jo['d']):
-        if jo['d']['lux'] is 'current':
+        if jo['d']['lux'] == 'current':
             lastPub = - device.meta['pubInterval']
 
 nic = uComMgr32.startWiFi('io7lux')
